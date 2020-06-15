@@ -1,2 +1,2 @@
 # SignatureGenerator
-Request SignatureGenerator Tool for Kuveyt Türk API Requests 
+A Utility Tool implementation for generating the SHA256RSA signed signature for Kuveyt Türk API Requests.
