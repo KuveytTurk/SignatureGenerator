@@ -119,10 +119,18 @@ public class SignatureGenerationController implements Initializable {
             }
 
             try {
-                String signatureText = SignatureGeneratorUtility.generateSignatureForPostRequest(accessTokenTextField.getText().trim(),
-                                                                          privateKeyTextArea.getText().trim(),
-                                                                          postRequestBodyTextArea.getText().trim());
+
+                String accessTokenText = accessTokenTextField.getText().trim().replaceAll("\\s+", "");
+                String privateKeyText = privateKeyTextArea.getText().trim().replaceAll("\\s+", "");
+                String postRequestBodyText = postRequestBodyTextArea.getText().trim().replaceAll("\\s+", "");
+
+                accessTokenTextField.setText(accessTokenText);
+                privateKeyTextArea.setText(privateKeyText);
+                postRequestBodyTextArea.setText(postRequestBodyText);
+
+                String signatureText = SignatureGeneratorUtility.generateSignatureForPostRequest(accessTokenText, privateKeyText, postRequestBodyText);
                 signatureTextArea.setText(signatureText);
+
             } catch (SignatureGenerationException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error Dialog");
