@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="429.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tr.com.kuveytturk.api.signature.SignatureGenerationController">
+   <children>
+      <Label layoutX="14.0" layoutY="29.0" text="HTTP Method">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <ComboBox fx:id="httpMethodComboBox" layoutX="134.0" layoutY="24.0" onAction="#onHttpMethodChanged" prefWidth="150.0" promptText="Select" />
+      <Label layoutX="14.0" layoutY="78.0" prefHeight="17.0" prefWidth="112.0" text="API Endpoint URL" >
+          <font>
+              <Font name="System Bold" size="13.0" />
+          </font></Label>
+      <TextField fx:id="apiEndpointUrlTextField" layoutX="134.0" layoutY="73.0" prefHeight="27.0" prefWidth="853.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="328.0" layoutY="29.0" prefHeight="17.0" prefWidth="112.0" text="AccessToken" >
+          <font>
+              <Font name="System Bold" size="13.0" />
+          </font></Label>
+      <TextField fx:id="accessTokenTextField" layoutX="426.0" layoutY="24.0" prefHeight="27.0" prefWidth="560.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="14.0" layoutY="124.0" prefHeight="17.0" prefWidth="112.0" text="Private Key" >
+          <font>
+              <Font name="System Bold" size="13.0" />
+          </font></Label>
+      <ScrollPane layoutX="14.0" layoutY="151.0" prefHeight="200.0" prefWidth="339.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="319.0">
+               <children>
+                  <TextArea fx:id="privateKeyTextArea" prefHeight="200.0" prefWidth="314.0">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label layoutX="384.0" layoutY="124.0" prefHeight="17.0" prefWidth="143.0" text="Post Request Body" >
+          <font>
+              <Font name="System Bold" size="13.0" />
+          </font></Label>
+      <ScrollPane layoutX="384.0" layoutY="151.0" prefHeight="200.0" prefWidth="302.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="282.0">
+               <children>
+                  <TextArea fx:id="postRequestBodyTextArea" prefHeight="200.0" prefWidth="277.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <ScrollPane layoutX="710.0" layoutY="151.0" prefHeight="200.0" prefWidth="277.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="258.0">
+               <children>
+                  <TextArea fx:id="signatureTextArea" prefHeight="200.0" prefWidth="252.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label layoutX="710.0" layoutY="124.0" prefHeight="17.0" prefWidth="143.0" text="Generated Signature">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Button fx:id="generateSignatureButton" layoutX="63.0" layoutY="371.0" mnemonicParsing="false" onAction="#onGenerateSignatureClicked" prefHeight="27.0" prefWidth="143.0" text="Generate Signature" >
+          <font>
+              <Font name="System Bold" size="13.0" />
+          </font></Button>
+      <Button fx:id="copyToClipBoardButton" layoutX="777.0" layoutY="371.0" mnemonicParsing="false" onAction="#onCopyToClipBoardClicked" prefHeight="27.0" prefWidth="143.0" text="Copy To ClipBoard" >
+          <font>
+              <Font name="System Bold" size="13.0" />
+          </font></Button>
+      <Button fx:id="cleanFormButton" layoutX="464.0" layoutY="371.0" mnemonicParsing="false" onAction="#onCleanFormClicked" prefHeight="27.0" prefWidth="143.0" text="Clean Form" >
+          <font>
+              <Font name="System Bold" size="13.0" />
+          </font></Button>
+   </children>
+</AnchorPane>
