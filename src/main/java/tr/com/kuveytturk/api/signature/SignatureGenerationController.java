@@ -120,8 +120,8 @@ public class SignatureGenerationController implements Initializable {
 
             try {
 
-                String accessTokenText = accessTokenTextField.getText().trim().replaceAll("\\s+", "");
-                String privateKeyText = privateKeyTextArea.getText().trim().replaceAll("\\s+", "");
+                String accessTokenText = accessTokenTextField.getText().trim();
+                String privateKeyText = privateKeyTextArea.getText().trim();
                 String postRequestBodyText = postRequestBodyTextArea.getText().trim().replaceAll("\\s+", "");
 
                 accessTokenTextField.setText(accessTokenText);
